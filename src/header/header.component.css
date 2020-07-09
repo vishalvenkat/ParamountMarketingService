@@ -1,0 +1,10 @@
+mat-toolbar {
+  justify-content: space-evenly;
+}
+img {
+  width: 25%;
+  height:25%;
+}
+span {
+  padding-right: 20%;
+}
