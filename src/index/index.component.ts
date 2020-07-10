@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 
 @Component({
   selector: 'app-index',
@@ -15,17 +15,17 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
             </div>
         </div>
     </div>
+    <div *ngIf = "isLoggedIn"></div>
   `,
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {
-@Output() isLoggedIn = new EventEmitter<boolean>();
+  @Output() isLoggedIn = new EventEmitter<boolean>();
   constructor() { }
 
   ngOnInit() {
   }
 loggedIn() {
-    console.log('in index after logging in');
-    this.isLoggedIn.emit(true);
+  this.isLoggedIn.emit(true);
 }
 }

@@ -9,9 +9,11 @@ import {IndexComponent} from '../index/index.component';
 import {LoginComponent} from '../login/login.component';
 import {HomePageComponent} from '../home-page/home-page.component';
 
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MaterialModule} from '../material/material.module';
 import {RoutingModule, RouteComponents} from '../routing/routing.module';
+import {CardViewComponent} from '../card-view/card-view.component';
+import {ListViewComponent} from '../list-view/list-view.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import {RoutingModule, RouteComponents} from '../routing/routing.module';
     IndexComponent,
     LoginComponent,
     HomePageComponent,
+    CardViewComponent,
+    ListViewComponent,
     RouteComponents
   ],
   imports: [
@@ -27,7 +31,8 @@ import {RoutingModule, RouteComponents} from '../routing/routing.module';
     BrowserAnimationsModule,
     MaterialModule,
     FormsModule,
-    RoutingModule
+    RoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,13 @@
 import { NgModule } from '@angular/core';
-import {MatToolbarModule, MatIconModule, MatCardModule} from '@angular/material';
+import {
+  MatToolbarModule,
+  MatIconModule,
+  MatCardModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatOptionModule,
+  MatPaginatorModule, MatRadioModule, MatSliderModule, MatSortModule, MatTableModule, MatTabsModule, MatAutocompleteModule
+} from '@angular/material';
 
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
 import {MatButtonModule} from '@angular/material';
@@ -10,7 +18,15 @@ const materialModule = [
   MatCardModule,
   MatFormFieldModule,
   MatInputModule,
-  MatButtonModule
+  MatButtonModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
+  MatOptionModule, MatPaginatorModule, MatRadioModule,
+  MatSliderModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatAutocompleteModule
 ];
 
 @NgModule({
