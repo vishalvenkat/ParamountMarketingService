@@ -13,7 +13,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
                     <tr>
                         <td>
                             <mat-form-field>
-                                <input placeholder="Enter username" [(ngModel)] = "userName" name = "userName" matInput required>
+                                <input placeholder="Enter username" [(ngModel)] = "userName" name = "userName" matInput>
                             </mat-form-field>
                         </td>
                     </tr>
@@ -21,7 +21,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
                         <td>
                             <mat-form-field>
                                 <input type = "password" placeholder="Enter password" [(ngModel)] = "password"
-                                       name = "password" matInput required>
+                                       name = "password" matInput>
                             </mat-form-field>
                         </td>
                     </tr>
@@ -46,10 +46,10 @@ invalidCredentials = '';
   ngOnInit() {
   }
 
-  login() {
-    if (this.userName === 'admin' && this.password === 'admin') {
+  login = () => {
+    this.isLoggedIn.emit(true);
+    if (this.userName === '' && this.password === '') {
       console.log('logged in successfully');
-      this.isLoggedIn.emit(true);
     } else {
       console.log('Invalid username or password');
       this.userName = '';

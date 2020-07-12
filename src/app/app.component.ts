@@ -14,9 +14,10 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'ParamountMarketingService';
 isLoggedIn = false;
-login() {
+constructor() {
+}
+login = () => {
   this.isLoggedIn = true;
 }
 }

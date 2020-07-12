@@ -14,6 +14,8 @@ import {MaterialModule} from '../material/material.module';
 import {RoutingModule, RouteComponents} from '../routing/routing.module';
 import {CardViewComponent} from '../card-view/card-view.component';
 import {ListViewComponent} from '../list-view/list-view.component';
+import {CardsComponent} from '../cards/cards.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,7 @@ import {ListViewComponent} from '../list-view/list-view.component';
     HomePageComponent,
     CardViewComponent,
     ListViewComponent,
+    CardsComponent,
     RouteComponents
   ],
   imports: [
@@ -32,7 +35,8 @@ import {ListViewComponent} from '../list-view/list-view.component';
     MaterialModule,
     FormsModule,
     RoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

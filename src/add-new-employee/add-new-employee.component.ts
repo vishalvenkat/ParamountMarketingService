@@ -1,7 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl} from '@angular/forms';
+import { FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
+import {EmployeeServiceService} from '../Services/employee-service.service';
+import {Employee} from '../Classes/EmployeeClass/employee';
 @Component({
   selector: 'app-add-new-employee',
   template: `
@@ -140,29 +142,33 @@ export class AddNewEmployeeComponent implements OnInit {
   myControl1 = new FormControl();
   cities: string[] = ['Chennai', 'Madurai'];
   options: string[] = ['Tamil Nadu', 'Maharastra'];
+  maxId: number;
   filteredOptions: Observable<string[]>;
   cityOptions: Observable<string[]>;
-  constructor() {
+  employeeList: Employee[];
+  constructor(private db: EmployeeServiceService) {
   }
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value, this.options))
+      map(value => this.filter(value, this.options))
     );
     this.cityOptions = this.myControl1.valueChanges.pipe(
       startWith(''),
-      map(value => this._filter(value, this.cities))
+      map(value => this.filter(value, this.cities))
     );
   }
-  private _filter(value: string, optionsAvailable: string[]) {
+   filter = (value: string, optionsAvailable: string[]) => {
     const filterValue = value.toLowerCase();
     return optionsAvailable.filter(option => option.toLowerCase().indexOf(filterValue) === 0);
   }
-  addEmployee() {
-    console.log(this.firstName);
-    console.log(this.state);
-    console.log(this.endDate1);
-    console.log(this.CE);
-    console.log(this.gender);
+  addEmployee = () => {
+    this.db.maxId.subscribe(array => this.maxId = array);
+    const newEmployee = new Employee(this.maxId, this.firstName, this.lastName,
+      this.gender, this.state, this.city, new Date(this.startDate1), new Date(this.endDate1),
+      this.CE, this.CN, this.CS);
+    this.db.employeeArray.subscribe(array => this.employeeList = array);
+    this.employeeList.push(newEmployee);
+    this.db.updateEmployeeList(this.employeeList);
   }
 }
