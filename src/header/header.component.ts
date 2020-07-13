@@ -5,7 +5,7 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-header',
   template: `
-      <mat-toolbar color="primary">
+      <mat-toolbar>
           <div><img [src]="imgSource" [alt]="altForImage" /></div>
           <div>
               <button mat-button (click)="workAfterLogin()">Paramount Marketing services</button>

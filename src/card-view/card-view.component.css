@@ -1,8 +1,5 @@
-mat-card-header {
-  background-color: lightskyblue;
-}
 mat-card {
-  width: 200px;
+  width: 500px;
   padding: 0 0 0 0;
 }
 mat-icon {
@@ -14,4 +11,15 @@ mat-icon:hover {
 }
 mat-paginator {
   background: inherit;
+}
+img {
+  height: 50px;
+  width: 50px;
+}
+mat-grid-tile {
+  padding: 0 0 0 0;
+  size: 35px;
+}
+.card-top {
+  background-color: blanchedalmond;
 }

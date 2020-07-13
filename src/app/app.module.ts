@@ -16,6 +16,7 @@ import {CardViewComponent} from '../card-view/card-view.component';
 import {ListViewComponent} from '../list-view/list-view.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import {DeleteConfirmationComponent} from '../delete-confirmation/delete-confirmation.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,8 +26,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomePageComponent,
     CardViewComponent,
     ListViewComponent,
-    RouteComponents
+    RouteComponents,
+    DeleteConfirmationComponent
   ],
+  entryComponents: [DeleteConfirmationComponent],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,

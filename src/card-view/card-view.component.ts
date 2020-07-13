@@ -11,20 +11,19 @@ import {Observable} from 'rxjs';
       </mat-form-field>
       <mat-grid-list cols="2" rowHeight="4:1">
           <div *ngFor="let employee of obs | async">
-              <mat-grid-tile><mat-card>
-                  <mat-card-header>
-                            <mat-card-title>{{employee.firstName}}</mat-card-title>
-                            <mat-card-subtitle>{{employee.lastName}}</mat-card-subtitle>
-                            <mat-icon (click)="deleteEmployee(employee)">close</mat-icon>
-                  </mat-card-header>
-                  <mat-card-content>
-                      <p>{{employee.city}}</p>
-                      <p>{{employee.CRR}}</p>
-                  </mat-card-content>
-              </mat-card></mat-grid-tile>
+              <mat-grid-tile>
+                  <mat-card>
+                      <mat-grid-list cols="2" rowHeight="50px">
+                          <mat-grid-tile class="card-top">{{employee.firstName}}, {{employee.lastName}}</mat-grid-tile>
+                          <mat-grid-tile class="card-top"><button mat-icon-button (click)="deleteEmployee(employee)"><mat-icon>close</mat-icon></button></mat-grid-tile>
+                          <mat-grid-tile><img [src] = getImageUrl(employee.gender) alt=employee.gender></mat-grid-tile>
+                          <mat-grid-tile>{{'CRR: ' + employee.CRR}}</mat-grid-tile>
+                      </mat-grid-list>
+                  </mat-card>
+              </mat-grid-tile>
           </div>
       </mat-grid-list>
-      <mat-paginator [pageSizeOptions]="[4]"></mat-paginator>`,
+      <mat-paginator [pageSizeOptions]="[4]" showFirstLastButtons></mat-paginator>`,
   styleUrls: ['./card-view.component.css']
 })
 export class CardViewComponent implements OnChanges {
@@ -37,16 +36,19 @@ export class CardViewComponent implements OnChanges {
     }
 
   ngOnChanges() {
-    this.dataSource = new MatTableDataSource<Employee>(this.employeeList);;
+    this.dataSource = new MatTableDataSource<Employee>(this.employeeList);
     this.changeDetectorRef.detectChanges();
     this.dataSource.paginator = this.paginator;
     this.obs = this.dataSource.connect();
    }
   deleteEmployee = (employee: Employee) => {
-    console.log(employee);
     this.deletedEmployee.emit(employee);
   }
   applyFilter = (filterValue: string) => {
     this.dataSource.filter = filterValue.trim().toLowerCase();
+  }
+  getImageUrl(gender: string) {
+    if (gender === 'male') { return './assets/Images/male.png'; }
+    return './assets/Images/female.png';
   }
 }

@@ -27,7 +27,11 @@ export class Employee {
     this.CE = CE;
     this.CN = CN;
     this.CS = CS;
-    this.CRR = ((CE - CN) / CS);
+    this.CRR = this.calculateCRR(CE, CN, CS);
     this.isDeleted = false;
+  }
+  calculateCRR = (CE: number, CN: number, CS: number) => {
+    const tempCRR = ((CE - CN) / CS);
+    return +tempCRR.toFixed(2) * 100;
   }
 }

@@ -40,7 +40,7 @@ import {MatSort, MatTableDataSource, MatPaginator} from '@angular/material';
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
       </table>
-    <mat-paginator [pageSizeOptions]="[5,10]" showFirstLastButtons></mat-paginator>
+    <mat-paginator [pageSizeOptions]="[6,12]" showFirstLastButtons></mat-paginator>
       `,
   styleUrls: ['./list-view.component.css']
 })

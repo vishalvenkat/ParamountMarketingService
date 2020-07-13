@@ -62,7 +62,7 @@ import {Router} from '@angular/router';
                               <mat-error>choose city</mat-error>
                           </mat-form-field>
                           <mat-form-field>
-                              <input formControlName="endDate" matInput [matDatepicker]="endDatePicker" placeholder="Start date">
+                              <input formControlName="endDate" matInput [matDatepicker]="endDatePicker" placeholder="End date">
                               <mat-datepicker-toggle matSuffix [for]="endDatePicker"></mat-datepicker-toggle>
                               <mat-datepicker #endDatePicker></mat-datepicker>
                               <mat-error>Pick end date</mat-error>
@@ -82,7 +82,7 @@ import {Router} from '@angular/router';
 })
 export class AddNewEmployeeComponent implements OnInit {
   stateList: string[] = ['Tamil Nadu', 'Maharastra'];
-  cityList: string[] = ['Chennai', 'Coimbatore', 'Madurai', 'Kanchipuram', 'Madurai', 'Tanjore', 'Mumbai', 'Nagpur', 'Pune', 'Kolad'];
+  cityList: string[] = ['Chennai', 'Coimbatore', 'Madurai', 'Kanchipuram', 'Tanjore', 'Mumbai', 'Nagpur', 'Pune', 'Kolad'];
   private maxId: number;
   private employeeList: Employee[];
   constructor(private employeeService: EmployeeServiceService, private snackBar: MatSnackBar, private router: Router) { }

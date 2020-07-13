@@ -38,8 +38,8 @@ invalidCredentials = '';
   }
 
   login = () => {
+    this.isLoggedIn.emit(true);
     if (this.userName === 'admin' && this.password === 'admin') {
-      this.isLoggedIn.emit(true);
       this.matSnackBar.open('logged in successfully', '', {duration: 1000});
     } else {
       this.matSnackBar.open('Username or password is incorrect', '', {duration: 1000});
