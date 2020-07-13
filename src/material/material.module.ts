@@ -6,7 +6,15 @@ import {
   MatDatepickerModule,
   MatNativeDateModule,
   MatOptionModule,
-  MatPaginatorModule, MatRadioModule, MatSliderModule, MatSortModule, MatTableModule, MatTabsModule, MatAutocompleteModule
+  MatPaginatorModule,
+  MatRadioModule,
+  MatSliderModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatAutocompleteModule,
+  MatDialogModule,
+  MatGridListModule, MatSnackBarModule, MatTooltipModule, MatSelectModule
 } from '@angular/material';
 
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
@@ -26,7 +34,12 @@ const materialModule = [
   MatSortModule,
   MatTableModule,
   MatTabsModule,
-  MatAutocompleteModule
+  MatAutocompleteModule,
+  MatDialogModule,
+  MatGridListModule,
+  MatSnackBarModule,
+  MatTooltipModule,
+  MatSelectModule
 ];
 
 @NgModule({

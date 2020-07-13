@@ -4,19 +4,13 @@ import {EmployeeServiceService} from '../Services/employee-service.service';
 @Component({
   selector: 'app-index',
   template: `
-    <div class="body">
-        <div class="split left">
-            <div class="centered">
-                <span>Paramount Marketing services is one of the top marketing firm in the world.</span>
-            </div>
-        </div>
-        <div class="split right">
-            <div class="centered">
-                <app-login (isLoggedIn)="loggedIn()" ></app-login>
-            </div>
-        </div>
-    </div>
-    <div *ngIf = "isLoggedIn"></div>
+    <div class="background1">
+    <mat-grid-list cols="2" rowHeight="1.15:1">
+        <mat-grid-tile>
+            <span>Paramount Marketing services is one of the top marketing firm in the world.</span>
+        </mat-grid-tile>
+        <mat-grid-tile><app-login (isLoggedIn)="loggedIn()" ></app-login></mat-grid-tile>
+    </mat-grid-list></div>
   `,
   styleUrls: ['./index.component.css']
 })

@@ -5,3 +5,6 @@ table {
 th.mat-sort-header-sorted {
   color: black;
 }
+table, mat-paginator {
+  background: inherit;
+}

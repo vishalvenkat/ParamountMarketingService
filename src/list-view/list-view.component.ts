@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild, OnChanges} from '@angular/core';
+import {Component, EventEmitter, Input, Output, ViewChild, OnChanges} from '@angular/core';
 import {Employee} from '../Classes/EmployeeClass/employee';
 import {MatSort, MatTableDataSource, MatPaginator} from '@angular/material';
 
@@ -50,7 +50,7 @@ export class ListViewComponent implements OnChanges {
   dataSource: any;
   displayedColumns: any;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator;
   constructor() {
   }
   ngOnChanges() {

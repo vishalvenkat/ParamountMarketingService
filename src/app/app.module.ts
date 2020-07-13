@@ -14,10 +14,8 @@ import {MaterialModule} from '../material/material.module';
 import {RoutingModule, RouteComponents} from '../routing/routing.module';
 import {CardViewComponent} from '../card-view/card-view.component';
 import {ListViewComponent} from '../list-view/list-view.component';
-import {CardsComponent} from '../cards/cards.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +25,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     HomePageComponent,
     CardViewComponent,
     ListViewComponent,
-    CardsComponent,
     RouteComponents
   ],
   imports: [

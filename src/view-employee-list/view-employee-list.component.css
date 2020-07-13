@@ -1,0 +1,14 @@
+.background {
+  background: linear-gradient(to top, #33ccff 0%, #ffffff 100%);
+  height: 90%;
+}
+.example-large-box {
+  height: 300px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 16px;
+  padding: 16px;
+  border-radius: 8px;
+}

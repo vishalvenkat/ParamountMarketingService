@@ -1,5 +1,6 @@
 mat-toolbar {
   justify-content: space-evenly;
+  margin-bottom: 0%;
 }
 img {
   width: 25%;
