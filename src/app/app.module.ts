@@ -16,6 +16,7 @@ import {CardViewComponent} from '../card-view/card-view.component';
 import {ListViewComponent} from '../list-view/list-view.component';
 import {CardsComponent} from '../cards/cards.component';
 import {HttpClientModule} from '@angular/common/http';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     RoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,36 +3,18 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 @Component({
   selector: 'app-login',
   template: `
-    <mat-card>
-        <mat-card-header>
-        <mat-card-title>Login</mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-            <form>
-                <table>
-                    <tr>
-                        <td>
-                            <mat-form-field>
-                                <input placeholder="Enter username" [(ngModel)] = "userName" name = "userName" matInput>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <mat-form-field>
-                                <input type = "password" placeholder="Enter password" [(ngModel)] = "password"
-                                       name = "password" matInput>
-                            </mat-form-field>
-                        </td>
-                    </tr>
-                </table>
-            </form>
-        </mat-card-content>
-        {{invalidCredentials}}
-        <mat-card-actions>
-            <button mat-raised-button (click)="login()">Login</button>
-        </mat-card-actions>
-    </mat-card>
+    <div>
+  <mat-card fxFlex="25">
+  <form>
+      <mat-form-field>
+          <input matInput placeholder="Username">
+      </mat-form-field>
+      <mat-form-field>
+          <input matInput placeholder="Password" type="password">
+      </mat-form-field>
+  </form>
+  </mat-card>
+    </div>
   `,
   styleUrls: ['./login.component.css']
 })

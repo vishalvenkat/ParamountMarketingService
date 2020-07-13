@@ -44,13 +44,8 @@ export class EmployeeServiceService {
     return tempArray;
   }
   deleteEmployee = (employeeId: number, employeeList: Employee[]) => {
-    const tempArray: Employee[] = [];
-    for (const emp of employeeList) {
-      if (emp.employeeID !== employeeId) {
-        tempArray.push(emp);
-      }
-    }
-    return tempArray;
+    employeeList = employeeList.filter(employee => employee.employeeID !== employeeId);
+    return employeeList;
   }
   updateEmployeeList = (newEmployeeList: Employee[]) => {
     this.employeeList.next(newEmployeeList);
