@@ -27,7 +27,7 @@ export class Employee {
     this.CE = CE;
     this.CN = CN;
     this.CS = CS;
-    this.CRR = ((CE - CN) / CS) * 100;
+    this.CRR = ((CE - CN) / CS);
     this.isDeleted = false;
   }
 }

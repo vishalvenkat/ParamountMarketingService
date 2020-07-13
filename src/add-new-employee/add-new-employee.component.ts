@@ -26,7 +26,7 @@ import {Router} from '@angular/router';
                           <mat-form-field>
                               <mat-select formControlName="state" placeholder="Choose state">
                                   <ng-container *ngFor="let stateOptions of stateList">
-                                      <mat-option value="stateOptions">{{stateOptions}}</mat-option>
+                                      <mat-option [value]="stateOptions">{{stateOptions}}</mat-option>
                                   </ng-container>
                               </mat-select>
                               <mat-error>choose state</mat-error>
@@ -56,7 +56,7 @@ import {Router} from '@angular/router';
                           <mat-form-field>
                               <mat-select formControlName="city" placeholder="Choose city">
                                   <ng-container *ngFor="let cityOptions of cityList">
-                                      <mat-option value="cityOptions">{{cityOptions}}</mat-option>
+                                      <mat-option [value]="cityOptions">{{cityOptions}}</mat-option>
                                   </ng-container>
                               </mat-select>
                               <mat-error>choose city</mat-error>
