@@ -1,29 +1,11 @@
 import {ChangeDetectorRef, Component, EventEmitter, Input, OnChanges, Output, ViewChild} from '@angular/core';
-import {Employee} from '../Classes/EmployeeClass/employee';
+import {Employee} from '../../Classes/EmployeeClass/employee';
 import {MatPaginator, MatTableDataSource} from '@angular/material';
 import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-card-view',
-  template: `
-      <mat-form-field>
-          <input matInput placeholder="search" (keyup)="applyFilter($event.target.value)">
-      </mat-form-field>
-      <mat-grid-list cols="2" rowHeight="4:1">
-          <div *ngFor="let employee of obs | async">
-              <mat-grid-tile>
-                  <mat-card>
-                      <mat-grid-list cols="2" rowHeight="50px">
-                          <mat-grid-tile class="card-top">{{employee.firstName}}, {{employee.lastName}}</mat-grid-tile>
-                          <mat-grid-tile class="card-top"><button mat-icon-button (click)="deleteEmployee(employee)" matTooltip="remove Employee" matTooltipPosition = 'right'><mat-icon>close</mat-icon></button></mat-grid-tile>
-                          <mat-grid-tile><img [src] = getImageUrl(employee.gender) alt=employee.gender></mat-grid-tile>
-                          <mat-grid-tile>{{'CRR: ' + employee.CRR}}</mat-grid-tile>
-                      </mat-grid-list>
-                  </mat-card>
-              </mat-grid-tile>
-          </div>
-      </mat-grid-list>
-      <mat-paginator [pageSizeOptions]="[4]" showFirstLastButtons></mat-paginator>`,
+  templateUrl: './card-view.component.html',
   styleUrls: ['./card-view.component.css']
 })
 export class CardViewComponent implements OnChanges {

@@ -4,15 +4,7 @@ import {LocationService} from '../Services/location.service';
 
 @Component({
   selector: 'app-index',
-  template: `
-    <div class="background1">
-    <mat-grid-list cols="2" rowHeight="1.15:1">
-        <mat-grid-tile>
-            <span>Paramount Marketing services is one of the top marketing firm in the world.</span>
-        </mat-grid-tile>
-        <mat-grid-tile><app-login (isLoggedIn)="loggedIn()" ></app-login></mat-grid-tile>
-    </mat-grid-list></div>
-  `,
+  templateUrl: './index.component.html',
   styleUrls: ['./index.component.css']
 })
 export class IndexComponent implements OnInit {

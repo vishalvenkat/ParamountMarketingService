@@ -32,8 +32,8 @@ mat-slider {
   -moz-appearance:none;
   appearance:none;
 }
-.male{background-image:url('../assets/Images/male.png');}
-.female{background-image:url('../assets/Images/female.png');}
+.male{background-image:url('../../assets/Images/male.png');}
+.female{background-image:url('../../assets/Images/female.png');}
 
 .radioStyle input:active +.gender{opacity: .9;}
 .radioStyle input:checked +.gender{
@@ -70,7 +70,6 @@ mat-card {
 .radio-center {
   margin-left: 43%;
 }
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }

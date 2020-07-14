@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {Employee} from '../Classes/EmployeeClass/employee';
+import {Employee} from '../../Classes/EmployeeClass/employee';
 import {EmployeeServiceService} from '../Services/employee-service.service';
 import {MatDialog, MatSnackBar} from '@angular/material';
 import {DeleteConfirmationComponent} from '../delete-confirmation/delete-confirmation.component';
@@ -7,17 +7,7 @@ import {DeleteConfirmationComponent} from '../delete-confirmation/delete-confirm
 
 @Component({
   selector: 'app-view-employee-list',
-  template: `
-      <div class="background">
-      <mat-tab-group headerPosition="below" mat-stretch-tabs>
-          <mat-tab label="Card View"  class="example-large-box">
-              <div><app-card-view [employeeList]="employeeList" (deletedEmployee)="deleteEmployee($event)">
-              </app-card-view></div></mat-tab>
-          <mat-tab label="List View"><app-list-view [employeeList]="employeeList" (deletedEmployee)="deleteEmployee($event)">
-          </app-list-view></mat-tab>
-      </mat-tab-group>
-  </div>
-  `,
+  templateUrl: './view-employee-list.component.html',
   styleUrls: ['./view-employee-list.component.css']
 })
 export class ViewEmployeeListComponent implements OnInit {

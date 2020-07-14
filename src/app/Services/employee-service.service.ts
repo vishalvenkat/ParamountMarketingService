@@ -1,6 +1,6 @@
 import {Injectable, OnInit} from '@angular/core';
 import {HttpClient, HttpErrorResponse } from '@angular/common/http';
-import {Employee} from '../Classes/EmployeeClass/employee';
+import {Employee} from '../../Classes/EmployeeClass/employee';
 import { BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
