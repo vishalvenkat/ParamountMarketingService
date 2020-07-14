@@ -32,6 +32,7 @@ export class Employee {
   }
   calculateCRR = (CE: number, CN: number, CS: number) => {
     const tempCRR = ((CE - CN) / CS);
-    return +tempCRR.toFixed(2) * 100;
+    tempCRR.toFixed(2);
+    return Number(tempCRR);
   }
 }

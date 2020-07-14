@@ -5,10 +5,12 @@ import {Router} from '@angular/router';
 @Component({
   selector: 'app-header',
   template: `
-      <mat-toolbar>
-          <div><img [src]="imgSource" [alt]="altForImage" /></div>
+      <mat-toolbar [ngClass] = "isLoggedIn ? 'after-login' : 'before-login'">
           <div>
-              <button mat-button (click)="workAfterLogin()">Paramount Marketing services</button>
+              <img [src]="imgSource" [alt]="altForImage"/>
+          </div>
+          <div>
+                  <button mat-button (click)="workAfterLogin()">Paramount Marketing services</button>
           </div>
           <div>
           <span>About</span>

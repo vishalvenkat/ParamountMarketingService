@@ -8,25 +8,25 @@ import {MatSort, MatTableDataSource, MatPaginator} from '@angular/material';
     <mat-form-field>
         <input matInput placeholder="search" (keyup)="applyFilter($event.target.value)">
     </mat-form-field>
-      <table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
           <ng-container matColumnDef="employeeID">
               <th mat-header-cell *matHeaderCellDef mat-sort-header>Employee ID</th>
               <td mat-cell *matCellDef="let element"> {{element.employeeID}} </td>
           </ng-container>
           <ng-container matColumnDef="firstName">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>firstName</th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>First Name</th>
               <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
           </ng-container>
           <ng-container matColumnDef="lastName">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>lastName</th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Last Name</th>
               <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
           </ng-container>
           <ng-container matColumnDef="state">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>state</th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>State</th>
               <td mat-cell *matCellDef="let element"> {{element.state}} </td>
           </ng-container>
           <ng-container matColumnDef="city">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>city</th>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>City</th>
               <td mat-cell *matCellDef="let element"> {{element.city}} </td>
           </ng-container>
           <ng-container matColumnDef="CRR">
@@ -34,8 +34,8 @@ import {MatSort, MatTableDataSource, MatPaginator} from '@angular/material';
               <td mat-cell *matCellDef="let element">{{element.CRR}}</td>
           </ng-container>
           <ng-container matColumnDef="isDeleted">
-              <th mat-header-cell *matHeaderCellDef mat-sort-header>isDeleted</th>
-              <td mat-cell *matCellDef="let element"><mat-icon (click)="deleteEmployee(element)">delete</mat-icon></td>
+              <th mat-header-cell *matHeaderCellDef>Delete</th>
+              <td mat-cell *matCellDef="let element"><mat-icon (click)="deleteEmployee(element)" matTooltip="remove Employee" matTooltipPosition = 'right'>delete</mat-icon></td>
           </ng-container>
           <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
           <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -50,7 +50,7 @@ export class ListViewComponent implements OnChanges {
   dataSource: any;
   displayedColumns: any;
   @ViewChild(MatSort, {static: true}) sort: MatSort;
-  @ViewChild(MatPaginator,{static: true}) paginator: MatPaginator;
+  @ViewChild(MatPaginator, {static: true}) paginator: MatPaginator;
   constructor() {
   }
   ngOnChanges() {

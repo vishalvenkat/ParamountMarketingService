@@ -4,13 +4,14 @@ import {EmployeeServiceService} from '../Services/employee-service.service';
 import {Employee} from '../Classes/EmployeeClass/employee';
 import {MatSnackBar} from '@angular/material';
 import {Router} from '@angular/router';
+import {LocationService} from '../Services/location.service';
 @Component({
   selector: 'app-add-new-employee',
   template: `
     <mat-card>
       <div class="container background">
           <form [formGroup]="form" class="normal-form">
-              <div class="radioStyle">
+              <div class="radioStyle radio-center">
                   <input id="Male" type="radio"  value="Male"  formControlName="gender"/>
                   <label class="gender male" for="Male"></label>
                   <input id="Female" type="radio" value="Female" formControlName="gender"/>
@@ -24,7 +25,7 @@ import {Router} from '@angular/router';
                               <mat-error>Enter name</mat-error>
                           </mat-form-field>
                           <mat-form-field>
-                              <mat-select formControlName="state" placeholder="Choose state">
+                              <mat-select formControlName="state" placeholder="Choose state" (selectionChange)="updateCity()">
                                   <ng-container *ngFor="let stateOptions of stateList">
                                       <mat-option [value]="stateOptions">{{stateOptions}}</mat-option>
                                   </ng-container>
@@ -72,7 +73,7 @@ import {Router} from '@angular/router';
                               <mat-error>Enter number</mat-error>
                           </mat-form-field>
                           <button mat-raised-button type="submit" color="primary" [disabled]="form.invalid" matTooltip="Add employee" (click)="addNewEmployee()">Add Employee</button>
-                      </div>
+                          </div>
                   </mat-grid-tile></mat-grid-list>
           </form>
       </div>
@@ -81,11 +82,12 @@ import {Router} from '@angular/router';
   styleUrls: ['./add-new-employee.component.css']
 })
 export class AddNewEmployeeComponent implements OnInit {
-  stateList: string[] = ['Tamil Nadu', 'Maharastra'];
-  cityList: string[] = ['Chennai', 'Coimbatore', 'Madurai', 'Kanchipuram', 'Tanjore', 'Mumbai', 'Nagpur', 'Pune', 'Kolad'];
+  stateList: string[] = [];
+  cityList: string[] = [];
   private maxId: number;
   private employeeList: Employee[];
-  constructor(private employeeService: EmployeeServiceService, private snackBar: MatSnackBar, private router: Router) { }
+  constructor(private employeeService: EmployeeServiceService, private snackBar: MatSnackBar, private router: Router,
+              private locationService: LocationService) {this.stateList = this.locationService.getStateList(); }
   form: FormGroup = new FormGroup({
     firstName: new FormControl('', Validators.required),
     lastName: new FormControl('', Validators.required),
@@ -102,17 +104,27 @@ export class AddNewEmployeeComponent implements OnInit {
   ngOnInit(): void {
   }
   addNewEmployee = () => {
-    console.log('CE' + this.form.get('CE').value);
-    this.employeeService.maxId.subscribe(array => this.maxId = array);
-    const newEmployee = new Employee(this.maxId, this.form.get('firstName').value, this.form.get('lastName').value,
-      this.form.get('gender').value, this.form.get('state').value, this.form.get('city').value,
-      new Date(this.form.get('startDate').value), new Date(this.form.get('endDate').value),
-      this.form.get('CE').value, this.form.get('CN').value, this.form.get('CS').value);
-    this.employeeService.employeeArray.subscribe(array => this.employeeList = array);
-    this.employeeList.push(newEmployee);
-    this.employeeService.updateEmployeeList(this.employeeList);
-    this.snackBar.open('Employee added successfully', '', {duration: 1000});
-    this.form.reset();
-    this.router.navigate(['HomePage']);
+    if (this.dateChecker(this.form.get('startDate').value, this.form.get('endDate').value)) {
+      this.employeeService.maxId.subscribe(array => this.maxId = array);
+      this.employeeService.updateMaxId(this.maxId + 1);
+      const newEmployee = new Employee(this.maxId, this.form.get('firstName').value, this.form.get('lastName').value,
+        this.form.get('gender').value, this.form.get('state').value, this.form.get('city').value,
+        new Date(this.form.get('startDate').value), new Date(this.form.get('endDate').value),
+        this.form.get('CE').value, this.form.get('CN').value, this.form.get('CS').value);
+      this.employeeService.employeeArray.subscribe(array => this.employeeList = array);
+      this.employeeList.push(newEmployee);
+      this.employeeService.updateEmployeeList(this.employeeList);
+      this.snackBar.open('Employee added successfully', '', {duration: 1000});
+      this.form.reset();
+      this.router.navigate(['HomePage']);
+    } else {
+      this.snackBar.open('End date must be greater than start date', '', {duration: 2000});
+    }
+  }
+  updateCity = () => {
+    this.cityList = this.locationService.getCityList(this.form.get('state').value);
+  }
+  dateChecker = (startDate: string, endDate: string) => {
+     return endDate > startDate;
   }
 }

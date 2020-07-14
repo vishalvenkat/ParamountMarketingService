@@ -1,6 +1,11 @@
 mat-toolbar {
   justify-content: space-evenly;
-  margin-bottom: 0%;
+}
+.before-login {
+  background-color: inherit;
+}
+.after-login {
+  background-color: white;
 }
 img {
   width: 25%;

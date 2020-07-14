@@ -1,0 +1,10 @@
+[
+  {
+    "state": "Tamil Nadu",
+    "cities": ["Chennai", "Coimbatore", "Madurai", "Kanchipuram", "Tanjore"]
+  },
+  {
+    "state": "Maharastra",
+    "cities": ["Mumbai", "Nagpur", "Pune", "Kolad"]
+  }
+]

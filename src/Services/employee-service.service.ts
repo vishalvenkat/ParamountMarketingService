@@ -50,4 +50,7 @@ export class EmployeeServiceService {
   updateEmployeeList = (newEmployeeList: Employee[]) => {
     this.employeeList.next(newEmployeeList);
   }
+  updateMaxId = (id: number) => {
+    this.idSource.next(id);
+  }
 }

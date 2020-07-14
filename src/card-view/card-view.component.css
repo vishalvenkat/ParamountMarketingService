@@ -1,6 +1,7 @@
 mat-card {
   width: 500px;
   padding: 0 0 0 0;
+  height: 110px;
 }
 mat-icon {
   height: 10px;
@@ -13,12 +14,8 @@ mat-paginator {
   background: inherit;
 }
 img {
-  height: 50px;
-  width: 50px;
-}
-mat-grid-tile {
-  padding: 0 0 0 0;
-  size: 35px;
+  height: 40px;
+  width: 40px;
 }
 .card-top {
   background-color: blanchedalmond;

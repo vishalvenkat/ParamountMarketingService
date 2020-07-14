@@ -15,7 +15,7 @@ import {Observable} from 'rxjs';
                   <mat-card>
                       <mat-grid-list cols="2" rowHeight="50px">
                           <mat-grid-tile class="card-top">{{employee.firstName}}, {{employee.lastName}}</mat-grid-tile>
-                          <mat-grid-tile class="card-top"><button mat-icon-button (click)="deleteEmployee(employee)"><mat-icon>close</mat-icon></button></mat-grid-tile>
+                          <mat-grid-tile class="card-top"><button mat-icon-button (click)="deleteEmployee(employee)" matTooltip="remove Employee" matTooltipPosition = 'right'><mat-icon>close</mat-icon></button></mat-grid-tile>
                           <mat-grid-tile><img [src] = getImageUrl(employee.gender) alt=employee.gender></mat-grid-tile>
                           <mat-grid-tile>{{'CRR: ' + employee.CRR}}</mat-grid-tile>
                       </mat-grid-list>

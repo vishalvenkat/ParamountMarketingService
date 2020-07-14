@@ -33,7 +33,6 @@ employeeList: Employee[];
   deleteEmployee = (employee: Employee) => {
     const ref = this.matDialog.open(DeleteConfirmationComponent);
     ref.afterClosed().subscribe(isDelete => {
-      console.log('Delete: ' + typeof (isDelete));
       if (isDelete === 'true') {
         this.employeeList = this.db.deleteEmployee(employee.employeeID, this.employeeList);
         this.db.updateEmployeeList(this.employeeList);

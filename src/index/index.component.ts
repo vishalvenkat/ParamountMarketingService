@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {EmployeeServiceService} from '../Services/employee-service.service';
+import {LocationService} from '../Services/location.service';
 
 @Component({
   selector: 'app-index',
@@ -16,7 +17,7 @@ import {EmployeeServiceService} from '../Services/employee-service.service';
 })
 export class IndexComponent implements OnInit {
   @Output() isLoggedIn = new EventEmitter<boolean>();
-  constructor(employeeServiceService: EmployeeServiceService) { }
+  constructor(employeeServiceService: EmployeeServiceService, locationService: LocationService) { }
 
   ngOnInit() {
   }
