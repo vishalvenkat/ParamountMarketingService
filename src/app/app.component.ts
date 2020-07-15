@@ -3,14 +3,7 @@ import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  template: `
-    <div class="background1">
-    <app-header [isLoggedIn]="isLoggedIn"></app-header>
-        <div *ngIf="!isLoggedIn">
-    <app-index (isLoggedIn)="login()"></app-index>
-        </div>
-    </div>
-    <router-outlet></router-outlet>`,
+  templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {

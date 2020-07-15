@@ -1,16 +1,8 @@
-mat-toolbar {
-  justify-content: space-evenly;
-}
 .before-login {
   background-color: inherit;
+  justify-content: space-evenly;
 }
 .after-login {
-  background-color: white;
-}
-img {
-  width: 100%;
-  height: 100%;
-}
-span {
-  padding-right: 20%;
+  background-color: inherit;
+  justify-content: space-evenly;
 }

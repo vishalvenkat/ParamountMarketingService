@@ -9,20 +9,17 @@ import {Router} from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   @Input() isLoggedIn: boolean;
-imgSource = './assets/Images/Logo1.png';
-altForImage = 'Logo';
+  imgSource = './assets/Images/Logo1.png';
+  altForImage = 'Logo';
   constructor(private router: Router) {
     this.isLoggedIn = false;
   }
 
   ngOnInit() {
   }
-  workAfterLogin() {
+  workAfterLogin = () => {
     if (this.isLoggedIn) {
       this.router.navigate(['HomePage']);
     }
-  }
-  asd() {
-    console.log('asd');
   }
 }

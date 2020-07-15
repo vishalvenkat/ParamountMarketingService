@@ -17,6 +17,7 @@ import {ListViewComponent} from './list-view/list-view.component';
 import {HttpClientModule} from '@angular/common/http';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import {DeleteConfirmationComponent} from './delete-confirmation/delete-confirmation.component';
+import {MatSidenavModule} from '@angular/material';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +39,8 @@ import {DeleteConfirmationComponent} from './delete-confirmation/delete-confirma
     RoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,30 +1,9 @@
-div.container {
-  margin: 0px 40px;
-}
-.fill-remaining-spaces {
-  flex: 1 1 auto;
-}
-form.normal-form {
-  margin: 10px;
-}
 .controller-container {
   width: 100%;
   padding: 5%;
 }
 .controller-container > * {
   width: 100%;
-}
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-mat-slider {
-  width: 200px;
 }
 .radioStyle input{
   margin:0;padding:0;
@@ -58,17 +37,6 @@ mat-slider {
   -webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
   -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
   filter: brightness(1.2) grayscale(.5) opacity(.9);
-}
-mat-slider {
-  width: 100px;
-}
-mat-card {
-  height: 88%;
-  padding: 0 0 0 0;
-  background: linear-gradient(to top, #33ccff 0%, #ffffff 100%);
-}
-.radio-center {
-  margin-left: 43%;
 }
 input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
