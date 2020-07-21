@@ -3,11 +3,13 @@ import { Routes, RouterModule} from '@angular/router';
 import {AddNewEmployeeComponent} from '../add-new-employee/add-new-employee.component';
 import {ViewEmployeeListComponent} from '../view-employee-list/view-employee-list.component';
 import {HomePageComponent} from '../home-page/home-page.component';
+import { IndexComponent } from '../index/index.component';
 
 const routes: Routes = [
   {path: 'AddNewEmployee', component: AddNewEmployeeComponent},
   {path: 'ViewEmployees', component: ViewEmployeeListComponent},
-  {path: 'HomePage', component: HomePageComponent}
+  {path: 'HomePage', component: HomePageComponent},
+  {path: '', component: IndexComponent}
 ];
 const componentsRouted = [
   AddNewEmployeeComponent,

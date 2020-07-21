@@ -1,8 +1,11 @@
-.before-login {
+.background {
   background-color: inherit;
-  justify-content: space-evenly;
 }
-.after-login {
-  background-color: inherit;
-  justify-content: space-evenly;
+@media(max-width: 426px) {
+  button {
+    font-size: 10px;
+  }
+  .background {
+    width: 100%;
+  }
 }

@@ -1,8 +1,9 @@
-.before-login {
-  background-image: url("../assets/Images/bgImg2.jpg");
-  background-repeat: no-repeat;
+.background {
+  background: linear-gradient(to top, #33ccff 0, #ffffff);
   background-size: cover;
-}
-.after-login {
-  background: linear-gradient(to top, #33ccff 0%, #ffffff 200%);
+ }
+@media (min-width: 426px) {
+  .background {
+    background-color: #fff;
+   }
 }

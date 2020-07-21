@@ -5,7 +5,7 @@ import {HttpClient, HttpErrorResponse } from '@angular/common/http';
   providedIn: 'root'
 })
 export class LocationService {
-  jsonFile;
+  jsonFile: any[];
 
   constructor(http: HttpClient) {
     http.get('./assets/Json/stateDetails.json')

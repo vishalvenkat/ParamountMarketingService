@@ -1,6 +1,8 @@
+<div fxLayout="column">
 <mat-form-field>
   <input matInput placeholder="search" (keyup)="applyFilter($event.target.value)">
 </mat-form-field>
+<div fxFlex>
 <mat-grid-list cols="2" rowHeight="4:1">
   <div *ngFor="let employee of obs | async">
     <mat-grid-tile>
@@ -15,4 +17,8 @@
     </mat-grid-tile>
   </div>
 </mat-grid-list>
+</div>
+<div>
 <mat-paginator [pageSizeOptions]="[4]" showFirstLastButtons></mat-paginator>
+</div>
+</div>

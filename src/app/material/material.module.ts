@@ -14,7 +14,7 @@ import {
   MatTabsModule,
   MatAutocompleteModule,
   MatDialogModule,
-  MatGridListModule, MatSnackBarModule, MatTooltipModule, MatSelectModule
+  MatGridListModule, MatSnackBarModule, MatTooltipModule, MatSelectModule, MatSidenavModule
 } from '@angular/material';
 
 import {MatFormFieldModule, MatInputModule} from '@angular/material';
@@ -39,7 +39,8 @@ const materialModule = [
   MatGridListModule,
   MatSnackBarModule,
   MatTooltipModule,
-  MatSelectModule
+  MatSelectModule,
+  MatSidenavModule
 ];
 
 @NgModule({

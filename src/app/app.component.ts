@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router';
+import { EmployeeServiceService } from './Services/employee-service.service';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-isLoggedIn = false;
-constructor(private router: Router) {
-}
-login = () => {
-  this.isLoggedIn = true;
-  this.router.navigate(['HomePage']);
+constructor(private employeeService: EmployeeServiceService) {
+  employeeService.isLoggedIn.emit(false);
 }
 }

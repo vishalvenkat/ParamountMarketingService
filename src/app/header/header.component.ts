@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
+import { EmployeeServiceService } from '../Services/employee-service.service';
 
 
 @Component({
@@ -8,11 +9,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  @Input() isLoggedIn: boolean;
+  isLoggedIn:boolean;
   imgSource = './assets/Images/Logo1.png';
   altForImage = 'Logo';
-  constructor(private router: Router) {
-    this.isLoggedIn = false;
+  constructor(private router: Router, private employeeService: EmployeeServiceService) {
+  employeeService.isLoggedIn.subscribe((result: boolean) => this.isLoggedIn = result);
   }
 
   ngOnInit() {

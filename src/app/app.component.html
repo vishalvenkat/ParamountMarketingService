@@ -1,9 +1,6 @@
-<div fxFlexFill fxLayout="column" [ngClass] = "!isLoggedIn ? 'before-login' : 'after-login'">
-  <app-header [isLoggedIn]="isLoggedIn"></app-header>
-  <div fxLayout="column" fxFlex>
+<div fxFlexFill fxLayout="column" fxLayoutAlign="none none"  class="background">
+  <app-header></app-header>
+  <div fxLayout="column">
     <router-outlet></router-outlet>
-    <div *ngIf="!isLoggedIn">
-      <app-index (isLoggedIn)="login()"></app-index>
-    </div>
   </div>
 </div>

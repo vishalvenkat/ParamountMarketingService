@@ -1,4 +1,4 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable, OnInit, EventEmitter} from '@angular/core';
 import {HttpClient, HttpErrorResponse } from '@angular/common/http';
 import {Employee} from '../../Classes/EmployeeClass/employee';
 import { BehaviorSubject } from 'rxjs';
@@ -6,15 +6,16 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root'
 })
 export class EmployeeServiceService {
-  private employeeList;
-  employeeListJson;
-  employeeArray;
+  private employeeList: any;
+  employeeListJson: any;
+  employeeArray: any;
+  isLoggedIn = new EventEmitter<boolean>();
   private idSource = new BehaviorSubject(1);
   maxId = this.idSource.asObservable();
   constructor(http: HttpClient) {
     http.get('./assets/Json/EmployeeList.json')
       .subscribe(data => {this.employeeListJson = data as string[]; this.employeeList = new BehaviorSubject(this.getEmployeeList());
-                          this.employeeArray = this.employeeList.asObservable(); console.log('service'); },
+                          this.employeeArray = this.employeeList.asObservable() },
         (err: HttpErrorResponse) => {
           alert(err.message);
         });
